@@ -66,6 +66,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
+      {/* Wrapper */}
       <Wrapper>
         <h1>Quiz app</h1>
         {gameover || userAnswers.length === TOTAL_QUESTIONS ? (
@@ -73,7 +74,7 @@ const App = () => {
             Start
           </button>
         ) : null}
-        {gameover ? <p className="score">Score: {score} </p> : null}
+        {!gameover ? <p className="score">Score: {score} </p> : null}
         {loading && <p>Loading Questions...</p>}
         {!loading && !gameover && (
           <QuestionCard
